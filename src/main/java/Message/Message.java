@@ -3,9 +3,9 @@ package Message;
 import java.util.Date;
 
 public class Message {
-    private String login;
-    private long dateMilliseconds;
-    private String massage;
+    protected String login;
+    protected long dateMilliseconds;
+    protected String massage;
 
     public Message(){}
 

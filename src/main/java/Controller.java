@@ -2,6 +2,8 @@
 //Т.к классы Controller будут скорее всего передаланы под Post и Get запросы, я решил не заморачиваться по поводу красоты кода.
 import Account.Account;
 import Account.AccountService;
+import Account.AccountDao;
+import Message.MessageDao;
 import Message.MessageService;
 
 import java.util.Scanner;
@@ -12,37 +14,38 @@ public class Controller {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args){
-        while (true){
-            int selection = -1;
-            System.out.print("Выберите действие:\n1.Создание нового аккаунта\n2.Авторизация\n" +
-                    "3.Удаление аккаунта.\n0.Завершение программы\nВведите значение: ");
-            selection = in.nextInt();
-            if(selection==0){
-                break;
-            }
-            String login = "";
-            String password = "";
-            if(selection<0||selection>3){
-                System.out.println("\nНе верный вввод данных!!!\n");
-            } else {
-                System.out.print("Введите логин: ");
-                login = in.next();
-                System.out.print("Введите пароль: ");
-                password = in.next();
-            }
-            ////1. Create new account, 2. Authorization(After authorization, the form for editing an account and sending
-            // messages). Delete account. O. Close program
-            switch (selection){
-                case 1:
-                    createNewAccount(login,password);
-                    break;
-                case 2:
-                    authorization(login,password);
-                    break;
-                case 3:
-                    deleteAccount(login,password);
-            }
-        }
+        TEST.ttt();
+//        while (true){
+//            int selection = -1;
+//            System.out.print("Выберите действие:\n1.Создание нового аккаунта\n2.Авторизация\n" +
+//                    "3.Удаление аккаунта.\n0.Завершение программы\nВведите значение: ");
+//            selection = in.nextInt();
+//            if(selection==0){
+//                break;
+//            }
+//            String login = "";
+//            String password = "";
+//            if(selection<0||selection>3){
+//                System.out.println("\nНе верный вввод данных!!!\n");
+//            } else {
+//                System.out.print("Введите логин: ");
+//                login = in.next();
+//                System.out.print("Введите пароль: ");
+//                password = in.next();
+//            }
+//            ////1. Create new account, 2. Authorization(After authorization, the form for editing an account and sending
+//            // messages). Delete account. O. Close program
+//            switch (selection){
+//                case 1:
+//                    createNewAccount(login,password);
+//                    break;
+//                case 2:
+//                    authorization(login,password);
+//                    break;
+//                case 3:
+//                    deleteAccount(login,password);
+//            }
+//        }
     }
 
     //

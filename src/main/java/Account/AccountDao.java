@@ -15,7 +15,7 @@ public class AccountDao {
         try {
             accounts = mapper.readValue(new File("Account.json"), new TypeReference<ArrayList<Account>>(){});
         } catch (IOException e) {
-            accounts = new ArrayList<Account>();
+            accounts = new ArrayList<>();
             e.printStackTrace();
         }
         return accounts;
@@ -30,5 +30,15 @@ public class AccountDao {
             e.printStackTrace();
         }
         return message;
+    }
+
+    public void renewAccounts(){ //to change json file after adding, deleting account fields
+        ArrayList<Account> accounts;
+        try {
+            accounts = mapper.readValue(new File("Account.json"), new TypeReference<ArrayList<Account>>(){});
+            mapper.writeValue(new File("Account.json"),accounts);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

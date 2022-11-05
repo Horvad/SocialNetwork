@@ -7,6 +7,7 @@ public class Account {
     private String login;
     private String password;
     private Profile profile = new Profile();
+    private int newMessage = 0;
     public Account(){
 
     }
@@ -23,6 +24,14 @@ public class Account {
         this.profile.surname = account.profile.surname;
         this.profile.address = account.profile.address;
         this.profile.age = account.profile.age;
+    }
+
+    public int isNewMessage() {
+        return newMessage;
+    }
+
+    public void setNewMessage(int countNewMessage) {
+        this.newMessage = this.newMessage + countNewMessage;
     }
 
     public String getLogin() {
